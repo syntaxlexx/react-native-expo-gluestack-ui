@@ -9,13 +9,13 @@ import { ScrollView } from "react-native";
 import { Text } from "@/components/ui/text";
 
 import { Link } from "expo-router";
+import { ArrowRightIcon, Icon } from "@/components/ui/icon";
 
 const FeatureCard = ({ iconSvg: IconSvg, name, desc }: any) => {
   return (
     <Box
       className="flex-column border border-w-1 border-outline-700 md:flex-1 m-2 p-4 rounded"
-      key={name}
-    >
+      key={name}>
       <Box className="items-center flex flex-row">
         <Text>
           <IconSvg />
@@ -34,8 +34,7 @@ export default function Home() {
     <Box className="flex-1 bg-black h-[100vh]">
       <ScrollView
         style={{ height: "100%" }}
-        contentContainerStyle={{ flexGrow: 1 }}
-      >
+        contentContainerStyle={{ flexGrow: 1 }}>
         <Box className="absolute h-[500px] w-[500px] lg:w-[700px] lg:h-[700px]">
           <Gradient />
         </Box>
@@ -49,11 +48,12 @@ export default function Home() {
                 ./App.tsx
               </Text>
             </Box>
-            <Link href="/tabs/">
-              <Box className="bg-background-template py-2 px-6 rounded-full items-center flex-column sm:flex-row md:self-start">
+            <Link href="/tabs">
+              <Box className="bg-background-template py-2 px-6 rounded-full items-center flex-row border border-secondary-500">
                 <Text className="text-typography-white font-normal">
                   Explore Tab Navigation
                 </Text>
+                <Icon as={ArrowRightIcon} className="ml-2 text-secondary-500" />
               </Box>
             </Link>
           </Box>
