@@ -1,15 +1,16 @@
-import React from "react";
-import Gradient from "@/assets/Icons/Gradient";
 import DocumentData from "@/assets/Icons/DocumentData";
+import Gradient from "@/assets/Icons/Gradient";
 import LightBulbPerson from "@/assets/Icons/LightbulbPerson";
-import Rocket from "@/assets/Icons/Rocket";
 import Logo from "@/assets/Icons/Logo";
+import Rocket from "@/assets/Icons/Rocket";
 import { Box } from "@/components/ui/box";
-import { ScrollView } from "react-native";
+import { Button, ButtonIcon, ButtonText } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
+import React from "react";
+import { ScrollView } from "react-native";
 
-import { Link } from "expo-router";
-import { ArrowRightIcon, Icon } from "@/components/ui/icon";
+import { ChevronRightIcon } from "@/components/ui/icon";
+import { router } from "expo-router";
 
 const FeatureCard = ({ iconSvg: IconSvg, name, desc }: any) => {
   return (
@@ -48,14 +49,13 @@ export default function Home() {
                 ./App.tsx
               </Text>
             </Box>
-            <Link href="/tabs">
-              <Box className="bg-background-template py-2 px-6 rounded-full items-center flex-row border border-secondary-500">
-                <Text className="text-typography-white font-normal">
-                  Explore Tab Navigation
-                </Text>
-                <Icon as={ArrowRightIcon} className="ml-2 text-secondary-500" />
-              </Box>
-            </Link>
+            <Button
+              onPress={() => router.push("/tabs")}
+              action="primary"
+              className="bg-background-template border border-secondary-500">
+              <ButtonText>Explore Tab Navigation</ButtonText>
+              <ButtonIcon as={ChevronRightIcon} />
+            </Button>
           </Box>
           <Box className="flex-1 justify-center items-center h-[20px] w-[300px] lg:h-[160px] lg:w-[400px]">
             <Logo />
